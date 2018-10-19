@@ -4,10 +4,10 @@ const jimp = require("jimp");// npm i jimp
 const prefix = "+"; // prefix
 const Discord = require('discord.js');// npm i discord.js
 const client = new Discord.Client();
-const id = JSON.parse(fs.readFileSync("./id/mozo.json", "utf8"));
+const id = JSON.parse(fs.readFileSync("./rank/m3a4x.json", "utf8"));
 client.on("message", message => {
   if (message.author.bot) return;
-fs.writeFile('./id/mozo.json', JSON.stringify(id), (err) => {
+fs.writeFile('./id/m3a4x.json', JSON.stringify(id), (err) => {
 if (err) console.error(err);
 });
 });
@@ -22,7 +22,7 @@ if (err) console.error(err);
               id[message.author.id].points = 10;
               id[message.author.id].level = Math.floor(id[message.author.id].level+4);
           }
-          fs.writeFile('./id/mozo.json', JSON.stringify(id), (err) => {
+          fs.writeFile('./id/m3a4x.json', JSON.stringify(id), (err) => {
 if (err) console.error(err);
 });
     
