@@ -4,7 +4,7 @@ const jimp = require("jimp");// npm i jimp
 const prefix = "+"; // prefix
 const Discord = require('discord.js');// npm i discord.js
 const client = new Discord.Client();
-const id = JSON.parse(fs.readFileSync("./rank/m3a4x.json", "utf8"));
+const id = JSON.parse(fs.readFileSync("./id/m3a4x.json", "utf8"));
 client.on("message", message => {
   if (message.author.bot) return;
 fs.writeFile('./id/m3a4x.json', JSON.stringify(id), (err) => {
@@ -13,7 +13,7 @@ if (err) console.error(err);
 });
       client.on('message', message => {
           if(!id[message.author.id]) id[message.author.id] ={
-              textrank: 1,
+              textid: 1,
               points: 1
           };
           if(message.author.bot) return;
@@ -61,11 +61,11 @@ if (message.content.startsWith(prefix + "rank")) {
           var client = message.author;
  
       }
-if (!id[getvalueof.id]) id[getvalueof.id] = {textrank: 0,points: 1};
+if (!id[getvalueof.id]) id[getvalueof.id] = {textid: 0,points: 1};
             let Image = Canvas.Image,
             canvas = new Canvas(400, 200),
             ctx = canvas.getContext('2d');
-            fs.readFile("./id/rank.png", function (err, Background) {
+            fs.readFile("./id/id.png", function (err, Background) {
             if (err) return console.log(err);
             let id = Canvas.Image;
             let ground = new Image;
@@ -102,7 +102,7 @@ if (!id[getvalueof.id]) id[getvalueof.id] = {textrank: 0,points: 1};
                         ctx.fontSize = '12px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`${id[getvalueof.id].textrank}`, 252, 124); 
+                        ctx.fillText(`${id[getvalueof.id].textid}`, 252, 124); 
  
                         // P O I N T S
                         ctx.font = "bold 12px Arial";
@@ -129,4 +129,5 @@ message.channel.sendFile(canvas.toBuffer());
 }
 });
 });
+
 client.login(process.env.BOT_TOKEN);
